@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# use neovim instead of vim
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+# much typed commands
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -v" \
+	mkdir="mkdir -pv"
+
+# commands in colors
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto"
+
+# shortcuts
+alias \
+	ka="killall" \
+	v="$EDITOR" \
+	f="$FILE" \
+	yt="youtube-dl -i --download-archive ~/.config/youtube-dl/archive -x --audio-format mp3 -f bestaudio/best -o '%(title)s.%(ext)s'"
+
+# package manager shortcuts
+alias \
+	p="sudo pacman" \
+	psyu="sudo pacman -Syu"
+
+# git shortcuts
+alias \
+	gpush="git push -u origin master" \
+	gsub="git submodule add"

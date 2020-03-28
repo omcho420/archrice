@@ -1,0 +1,51 @@
+# main binds
+super + Return
+	$TERMINAL
+super + shift + w
+	$BROWSER
+super + f
+	$TERMINAL -e $FILE
+super + n
+	$TERMINAL -e nmtui
+super + m
+	$TERMINAL -e ncmpcpp
+
+# shutdown/screenlock/hibernate etc..
+super + x
+	slock & xset dpms force off
+super + shift + x
+	prompt "Shutdown?" "sudo -A shutdown now"
+super + shift + Escape
+	prompt "Leave Xorg?" "killall Xorg"
+super + shift + h
+	prompt "Hibernate?" "sudo -A zzz"
+
+# screenshot
+Print
+	maim pic-full-$(date '+%y%m%d-%H%H-%S').png
+
+# torrent setup
+super + F6
+	torwrap
+super + F7
+	td-toggle
+
+# dmenu scripts
+super + d
+	dmenu_run
+super + grave
+	dmenuemojis
+super + {F9,F10}
+	{dmenumount,dmenuumount}
+
+# increase volume
+super {_,shift +} + plus
+	amixer sset Master {5,15}%+; pkill -RTMIN+10 dwmblocks
+# decrease volume
+super {_,shift +} + minus
+	amixer sset Master {5,15}%-; pkill -RTMIN+10 dwmblocks
+super + shift + m
+	amixer sset Master toggle; pkill -RTMIN+10 dwmblocks
+# open the mixer
+super + shift + a
+	$TERMINAL -e alsamixer; pkill -RTMIN+10 dwmblocks
