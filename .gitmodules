@@ -1,0 +1,12 @@
+[submodule ".config/dwm"]
+	path = .config/dwm
+	url = git@github.com:omcho420/dwm.git
+[submodule ".config/st"]
+	path = .config/st
+	url = git@github.com:omcho420/st.git
+[submodule ".config/dwmblocks"]
+	path = .config/dwmblocks
+	url = git@github.com:omcho420/dwmblocks.git
+[submodule ".config/dmenu"]
+	path = .config/dmenu
+	url = git@github.com:omcho420/dmenu.git
